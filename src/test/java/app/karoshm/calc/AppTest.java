@@ -1,4 +1,4 @@
-package app.karoshm;
+package app.karoshm.calc;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
