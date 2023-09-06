@@ -1,4 +1,4 @@
-package app.karoshm.calc;
+package karoshm.calc;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
