@@ -1,4 +1,4 @@
-module app {
+module karoshm.calc {
     requires javafx.controls;
     requires javafx.fxml;
 
