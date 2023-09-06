@@ -10,11 +10,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.ListView;
 
-public class AppController {
+public class CalcController {
 
     private Calc calc;
 
-    public AppController() {
+    public CalcController() {
         calc = new Calc(0.0, 0.0, 0.0);
     }
 
@@ -90,11 +90,11 @@ public class AppController {
     void handlePoint() {
         var operandString = getOperandString();
         if (operandString.contains(".")) {
-        String dot = operandString.substring(0, operandString.indexOf(".") + 1);
-        setOperand(dot);
+            String dot = operandString.substring(0, operandString.indexOf(".") + 1);
+            setOperand(dot);
         } 
         else {
-        appendToOperand(".");
+            appendToOperand(".");
     }
         
         
@@ -103,6 +103,7 @@ public class AppController {
     @FXML
     void handleClear() {
         setOperand("");
+        updateOperandsView();
      
     }
 
