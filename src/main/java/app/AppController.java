@@ -118,7 +118,7 @@ public class AppController {
     }
 
     private void performOperation(boolean swap, BinaryOperator<Double> op) {
-        if (! hasOperand()) {
+        if (!hasOperand()) {
             return;
         }
         if (swap){
