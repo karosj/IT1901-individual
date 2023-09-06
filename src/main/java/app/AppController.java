@@ -132,23 +132,27 @@ public class AppController {
     void handleOpAdd() {
         BinaryOperator<Double> add = (x, y) -> x + y;
         performOperation(false, add);
+        updateOperandsView();
     }
 
     @FXML
     void handleOpSub() {
        BinaryOperator<Double> sub = (x, y) -> x + y;
        performOperation(false, sub);
+       updateOperandsView();
     }
 
     @FXML
     void handleOpMult() {
         BinaryOperator<Double> mult = (x, y) -> x * y;
         performOperation(false, mult);
+        updateOperandsView();
     }
     @FXML
     void handleOpDiv() {
         BinaryOperator<Double> div = (x, y) -> x / y;
         performOperation(false, div);
+        updateOperandsView();
     }
 
     @FXML

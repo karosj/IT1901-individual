@@ -123,7 +123,7 @@ public class Calc {
      * @throws IllegalStateException if the operand stack is empty
      */
     public void dup() {
-        if (getOperandCount() == 0) {
+        if (operandStack.isEmpty()) {
             throw new IllegalStateException("The stack is empty.");
         }
         pushOperand(operandStack.get(0));
