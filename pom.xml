@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>it1901</groupId>
-    <artifactId>javafx-template</artifactId>
+    <artifactId>karoshm-calc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
@@ -95,7 +95,7 @@
                 <!-- Default configuration for running -->
                 <!-- Usage: mvn javafx:run -->
                 <configuration>
-                    <mainClass>app.App</mainClass>
+                    <mainClass>karoshm.calc.CalcApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>
