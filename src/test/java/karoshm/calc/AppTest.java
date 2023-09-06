@@ -18,9 +18,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.testfx.framework.junit5.ApplicationTest;
 import org.testfx.matcher.control.LabeledMatchers;
 
-
-
-
 public class AppTest extends ApplicationTest {
 
     private CalcController controller;
