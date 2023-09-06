@@ -113,6 +113,7 @@ public class Calc {
         }
         var op2 = popOperand();
         var op1 = popOperand();
+
         pushOperand(op1);
         pushOperand(op2);
     }
@@ -126,6 +127,6 @@ public class Calc {
         if (operandStack.isEmpty()) {
             throw new IllegalStateException("The stack is empty.");
         }
-        pushOperand(operandStack.get(0));
+        pushOperand(peekOperand());
     }
 }
