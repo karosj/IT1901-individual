@@ -3,7 +3,7 @@ package app.karoshm;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import karoshm.app.Calc;
+import karoshm.app.calc.Calc;
 
 public class CalcTest {
 

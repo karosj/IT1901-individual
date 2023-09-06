@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
-import karoshm.app.CalcController;
+import karoshm.app.calc.CalcController;
 
 import java.io.IOException;
 import java.util.List;
