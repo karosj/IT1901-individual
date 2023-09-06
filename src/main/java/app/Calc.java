@@ -76,8 +76,8 @@ public class Calc {
         if (operandStack.isEmpty()) {
             throw new IllegalStateException("The stack is empty, therefore you can not pop it");
         }
-        double op1 = popOperand();
-        double result = op.apply(op1);
+        var op1 = popOperand();
+        var result = op.apply(op1);
         pushOperand(result);
         return result;
 
@@ -108,11 +108,11 @@ public class Calc {
      * @throws IllegalStateException if the operand count is less than two
      */
     public void swap() {
-        if (getOperandCount() < 2) {
+        if (operandStack.size() < 2) {
             throw new IllegalStateException("Too few operands (" + getOperandCount() + ") on the stack");
         }
-        var op2 = popOperand();
         var op1 = popOperand();
+        var op2 = popOperand();
 
         pushOperand(op1);
         pushOperand(op2);
