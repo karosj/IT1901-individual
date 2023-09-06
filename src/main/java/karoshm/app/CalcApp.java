@@ -1,4 +1,4 @@
-package app;
+package karoshm.app;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

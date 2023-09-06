@@ -1,4 +1,4 @@
-package app;
+package karoshm.app;
 
 import java.util.List;
 import java.util.function.BinaryOperator;

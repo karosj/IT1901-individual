@@ -1,4 +1,4 @@
-package app;
+package app.karoshm;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import karoshm.app.CalcController;
 
 import java.io.IOException;
 import java.util.List;
@@ -24,12 +25,12 @@ import org.testfx.matcher.control.LabeledMatchers;
  */
 public class AppTest extends ApplicationTest {
 
-    private AppController controller;
+    private CalcController controller;
     private Parent root;
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("App.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("Calc.fxml"));
         root = fxmlLoader.load();
         controller = fxmlLoader.getController();
         stage.setScene(new Scene(root));
@@ -41,12 +42,12 @@ public class AppTest extends ApplicationTest {
     }
 
     private String enterLabel = """
-        E
-        n
-        t
-        e
-        r
-        """.stripTrailing();
+            E
+            n
+            t
+            e
+            r
+            """.stripTrailing();
 
     private void click(String... labels) {
         for (var label : labels) {
@@ -64,11 +65,13 @@ public class AppTest extends ApplicationTest {
 
     private void checkView(double... operands) {
         for (int i = 0; i < operands.length; i++) {
-            Assertions.assertEquals(operands[i], controller.getCalc().peekOperand(i), "Wrong value at #" + i + " of operand stack");
+            Assertions.assertEquals(operands[i], controller.getCalc().peekOperand(i),
+                    "Wrong value at #" + i + " of operand stack");
         }
         List<Double> viewItems = getOperandsView().getItems();
         for (int i = 0; i < operands.length; i++) {
-            Assertions.assertEquals(operands[i], viewItems.get(viewItems.size() - i - 1), "Wrong value at #" + i + " of operands view");
+            Assertions.assertEquals(operands[i], viewItems.get(viewItems.size() - i - 1),
+                    "Wrong value at #" + i + " of operands view");
         }
     }
 
@@ -91,13 +94,12 @@ public class AppTest extends ApplicationTest {
 
     private static Stream<Arguments> testClicksOperand() {
         return Stream.of(
-            Arguments.of("2 7", "27"),
-            Arguments.of("2 7 .", "27."),
-            Arguments.of("2 7 . 5", "27.5"),
-            Arguments.of("2 7 . 5 .", "27.")
-        );
+                Arguments.of("2 7", "27"),
+                Arguments.of("2 7 .", "27."),
+                Arguments.of("2 7 . 5", "27.5"),
+                Arguments.of("2 7 . 5 .", "27."));
     }
-    
+
     @ParameterizedTest
     @MethodSource
     public void testClicksOperands(String labels, String operandsString) {
@@ -109,17 +111,16 @@ public class AppTest extends ApplicationTest {
 
     private static Stream<Arguments> testClicksOperands() {
         return Stream.of(
-            Arguments.of("2 7 . 5 \n", "27.5"),
-            Arguments.of("2 7 \n", "27.0"),
-            Arguments.of("2 \n 7 \n 5 \n", "5.0", "7.0", "2.0"),
-            Arguments.of("2 7 . \n", "27.0"),
-            Arguments.of("2 7 . 5 \n", "27.5"),
-            Arguments.of("2 \n 7 +", "9.0"),
-            Arguments.of("2 \n 7 -", "-5.0"),
-            Arguments.of("2 \n 7 *", "14.0"),
-            Arguments.of("6 \n 3 /", "2.0"),
-            Arguments.of("2 5 \n √", "5.0")
-        );
+                Arguments.of("2 7 . 5 \n", "27.5"),
+                Arguments.of("2 7 \n", "27.0"),
+                Arguments.of("2 \n 7 \n 5 \n", "5.0", "7.0", "2.0"),
+                Arguments.of("2 7 . \n", "27.0"),
+                Arguments.of("2 7 . 5 \n", "27.5"),
+                Arguments.of("2 \n 7 +", "9.0"),
+                Arguments.of("2 \n 7 -", "-5.0"),
+                Arguments.of("2 \n 7 *", "14.0"),
+                Arguments.of("6 \n 3 /", "2.0"),
+                Arguments.of("2 5 \n √", "5.0"));
     }
 
     @Test

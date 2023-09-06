@@ -1,7 +1,9 @@
-package app;
+package app.karoshm;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import karoshm.app.Calc;
 
 public class CalcTest {
 
@@ -68,7 +70,6 @@ public class CalcTest {
     public void testPerformOperation1_emptyOperandStack() {
         Assertions.assertThrows(IllegalStateException.class, () -> new Calc().performOperation(n -> -n));
     }
-
 
     @Test
     public void testPerformOperation2() {
