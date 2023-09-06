@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="CENTER" hgap="10.0" vgap="10.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.AppController">
+<GridPane alignment="CENTER" hgap="10.0" vgap="10.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="karoshm.calc.CalcController">
 
    <ListView fx:id="operandsView" prefHeight="80.0" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="0" />
    <Label fx:id="operandView" text="" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="1" />
