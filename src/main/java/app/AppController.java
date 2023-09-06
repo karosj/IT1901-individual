@@ -145,4 +145,23 @@ public class AppController {
         BinaryOperator<Double> mult = (x, y) -> x * y;
         performOperation(false, mult);
     }
+    @FXML
+    void handleOpDiv() {
+        BinaryOperator<Double> div = (x, y) -> x / y;
+        performOperation(false, div);
+    }
+
+    @FXML
+    void handleOpSqrt() {
+        UnaryOperator<Double> sqrt = Math::sqrt;
+        performOperation(sqrt);
+        updateOperandsView();
+    }
+
+    @FXML
+    void handleOpPi() {
+        calc.pushOperand(Math.PI);
+        updateOperandsView();
+    }
+
 }
