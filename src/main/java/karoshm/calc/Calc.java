@@ -7,7 +7,7 @@ import java.util.function.UnaryOperator;
 
 
 public class Calc {
-
+ 
     private final List<Double> operandStack;
 
     public Calc(double... operands) {
